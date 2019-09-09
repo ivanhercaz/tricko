@@ -16,7 +16,7 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.core.window import Window
 from kivy.config import Config
 
-from gardenqrcode import QRCodeWidget
+from kivy.garden.qrcode import QRCodeWidget
 
 import yaml
 

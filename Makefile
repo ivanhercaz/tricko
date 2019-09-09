@@ -9,4 +9,5 @@ install-dependencies:
 	pip install qrcode
 
 install-garden-dependencies:
-	wget https://raw.githubusercontent.com/kivy-garden/garden.qrcode/master/__init__.py -P gardenqrcode
+	pip install kivy-garden
+	garden install garden.qrcode --app
