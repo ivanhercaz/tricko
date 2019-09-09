@@ -1,0 +1,13 @@
+app:
+  title: Ticketera
+  width: 880
+  height: 440
+  size: (270, 440)
+  text_color:
+options:
+  send: Send
+  send_code: S
+  receipt: Receipt
+  receipt_code: R
+  info: Information
+  info_code: I
