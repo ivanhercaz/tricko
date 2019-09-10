@@ -6,13 +6,37 @@ save paper.
 
 ## Installation
 
-TODO
+Tricko has a `Makefile` to ease its installation and usage. As we haven't released the first version yet, you need to
+follow the next instructions:
+  
+  - Download this repository or clone it (`git clone ...`).
+  - In your terminal, move to where you download or clone Tricko.
+  - Run `make all`. It will install the Tricko's dependencies (`pyyaml`, `kivy`, `kivy-garden` and `garden.qrcode`).
+  - Then run `python app.py`.
+  - Enjoy and test Tricko!
+  
+As soon as possible we want to find an easier way to install Kivy. If you have any suggestion, you can write an issue!
 
 ## Usage
 
-TODO
+Tricko is very easy. You just need to run it with `python app.py` where you have Tricko source files. Then you have the
+three buttons to interact, that by default are *Send*, *Receipt* and *Information*. You can change it in the `config.yaml`
+file. It is also the file in which you can change another data, as you can see in the next section.
 
-## Development
+### Configuration
+
+In the configuration file, `config.yaml`, there are two main fields:
+
+  - `app`, dedicated to the app settings.
+    - `title`, title of the window.
+    - `width`, width of the window.
+    - `height`, height of the window.
+  - `options`, dedicated to the buttons for the type of ticket.
+    - `send` and `send_code`, one for the label and another for its respective code (e.g. **S** for *Send*).
+    - `receipt` and `receipt_code`. Ídem.
+    - `info` and `info_code`. Ídem.
+
+## Contributing
 
 TODO
 
