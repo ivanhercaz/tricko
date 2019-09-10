@@ -11,7 +11,8 @@ follow the next instructions:
   
   - Download this repository or clone it (`git clone ...`).
   - In your terminal, move to where you download or clone Tricko.
-  - Run `make all`. It will install the Tricko's dependencies (`pyyaml`, `kivy`, `kivy-garden` and `garden.qrcode`).
+  - Run `make all`. It will install the Tricko's dependencies, the ones indicated in the `requirements.txt` file
+   (`pyyaml`, `kivy` and `kivy-garden`) and the one part of the Kivy Garden (`garden.qrcode`).
   - Then run `python app.py`.
   - Enjoy and test Tricko!
   
