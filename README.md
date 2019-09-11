@@ -15,8 +15,11 @@ follow the next instructions:
    (`pyyaml`, `kivy` and `kivy-garden`) and the one part of the Kivy Garden (`garden.qrcode`).
   - Then run `python app.py`.
   - Enjoy and test Tricko!
-  
+
 As soon as possible we want to find an easier way to install Kivy. If you have any suggestion, you can write an issue!
+
+If you want to open Tricko just typing `tricko` in your terminal, you can run `make global`. This command will create an
+executable file with the current directory in which you have Tricko and then it will be moved to `/usr/local/bin`.
 
 ## Usage
 
