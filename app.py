@@ -13,8 +13,13 @@ from kivy.app import App
 from kivy.uix.button import Button
 from kivy.uix.label import Label
 from kivy.uix.boxlayout import BoxLayout
+from kivy.uix.layout import Layout
+from kivy.uix.widget import Widget
 from kivy.core.window import Window
 from kivy.config import Config
+
+from kivy.properties import ListProperty
+from kivy.properties import NumericProperty
 
 from kivy.garden.qrcode import QRCodeWidget
 
@@ -37,7 +42,17 @@ Config.set("graphics", "resizable", False)
 Config.write()
 
 
-class TicketeraApp(App):
+class TrickoApp(App):
+    # Counter properties
+    count = NumericProperty()
+    countSend = NumericProperty()
+    countReceipt = NumericProperty()
+    countInfo = NumericProperty()
+
+    # Next number properties
+    nextNumberSend = NumericProperty()
+    nextNumberReceipt = NumericProperty()
+    nextNumberInfo = NumericProperty()
 
     def clickSend(self):
         """
@@ -103,27 +118,20 @@ class TicketeraApp(App):
         """
 
         # Main layout (BoxLayout)
+        """
         layout = RootLayout()
         layout.orientation = "horizontal"
-
-        # Counters
-        self.count = 0
-        self.countSend = -1
-        self.countReceipt = -1
-        self.countInfo = -1
-
-        # General counter (sum of all the tickets obtained)
-        self.counterLabel = Label(
-            text=str(self.count), font_size=50, color=color["text"]
-        )
-        self.counterLabel.size_hint = 1, 1.75
-
         """
-            The next number means the next one to the latest ticket
+        # Configuration
+        self.config = config
+        self.color = color
 
-            The interesting part of that would be that when the operator (the one
-            who attend the person with the ticket) finish with one client, the operator
-            click a button to call the next number.
+        self.count = 0
+        self.countSend, self.countReceipt, self.countInfo = -1, -1, -1
+        self.nextNumberSend, self.nextNumberReceipt, self.nextNumberInfo = 0, 0, 0
+
+        return RootLayout()
+
         """
         self.nextNumberSend, self.nextNumberReceipt, self.nextNumberInfo = 0, 0, 0
 
@@ -149,13 +157,10 @@ class TicketeraApp(App):
         self.nextNumberInfoLabel.size_hint = 1, 1.75
 
         # Buttons for each action
-        buttonSend = Button(text=config["options"]["send"], color=color["text"])
         buttonSend.on_press = self.clickSend
 
-        buttonReceipt = Button(text=config["options"]["receipt"], color=color["text"])
         buttonReceipt.on_press = self.clickReceipt
 
-        buttonInfo = Button(text=config["options"]["info"], color=color["text"])
         buttonInfo.on_press = self.clickInfo
 
         # Sublayout (left column) to group items
@@ -196,10 +201,12 @@ class TicketeraApp(App):
         )
 
         """
+        """
             QR code generated with the current number as data (eg. E5)
             
             TODO: the data should be something more specific than a string with the number, like a link to an app or a
                 website to have digitally the QR and the number to show to the operator.
+        """
         """
         self.currentNumberQR = QRCodeWidget(
             id="qrNumber",
@@ -223,7 +230,7 @@ class TicketeraApp(App):
         layout.add_widget(verticalRightLayout)
 
         return layout
-
+        """
 
 class RootLayout(BoxLayout):
     pass
@@ -236,7 +243,7 @@ if __name__ == "__main__":
     # Set the background color of the window with the base color chosen
     Window.clearcolor = color["base"]
 
-    app = TicketeraApp()
+    app = TrickoApp()
     app.title = config["app"]["title"]
 
     app.run()
