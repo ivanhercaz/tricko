@@ -44,10 +44,10 @@ Config.write()
 
 class TrickoApp(App):
     # Counter properties
-    count = NumericProperty()
-    countSend = NumericProperty()
-    countReceipt = NumericProperty()
-    countInfo = NumericProperty()
+    count = NumericProperty(0)
+    countSend = NumericProperty(-1)
+    countReceipt = NumericProperty(-1)
+    countInfo = NumericProperty(-1)
 
     # Next number properties
     nextNumberSend = ObjectProperty("S0")
@@ -124,9 +124,6 @@ class TrickoApp(App):
         # Configuration
         self.config = config
         self.color = color
-
-        self.count = 0
-        self.countSend, self.countReceipt, self.countInfo = -1, -1, -1
 
         return RootLayout()
 
