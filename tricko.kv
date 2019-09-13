@@ -20,10 +20,12 @@
             id: buttonReceipt
             text: str(app.config["options"]["receipt"])
             color: app.color["text"]
+            on_press: app.clickReceipt()
         Button:
             id: buttonInfo
             text: str(app.config["options"]["info"])
             color: app.color["text"]
+            on_press: app.clickInfo()
         Label:
             id: labelNextNumber
             text: "Next number"

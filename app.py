@@ -85,16 +85,14 @@ class TrickoApp(App):
             Action when the "Receipt" button is clicked.
         """
         self.count += 1
-        self.counterLabel.text = str(self.count)
 
         self.countReceipt += 1
         self.nextNumberReceipt = self.countReceipt + 1
 
         value = config["options"]["receipt_code"] + str(self.nextNumberReceipt)
-        self.nextNumberReceiptLabel.text, self.currentNumberLabel.text, self.currentNumberQR.data = (
+        self.nextNumberReceipt, self.currentNumber = (
             value,
-            value,
-            value,
+            value
         )
 
     def clickInfo(self):
@@ -102,16 +100,14 @@ class TrickoApp(App):
             Action when the "Information" button is clicked
         """
         self.count += 1
-        self.counterLabel.text = str(self.count)
 
         self.countInfo += 1
         self.nextNumberInfo = self.countInfo + 1
 
-        value = config["options"]["info_code"] + str(self.nextNumberInfo)
-        self.nextNumberInfoLabel.text, self.currentNumberLabel.text, self.currentNumberQR.data = (
+        value = config["options"]["receipt_code"] + str(self.nextNumberInfo)
+        self.nextNumberInfo, self.currentNumber = (
             value,
-            value,
-            value,
+            value
         )
 
     def build(self):
