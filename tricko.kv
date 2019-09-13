@@ -1,5 +1,6 @@
 <RootLayout>:
     orientation: "horizontal"
+    currentNumberText: app.currentNumber
     BoxLayout:
         orientation: "vertical"
         Label:
@@ -14,6 +15,7 @@
             id: buttonSend
             text: str(app.config["options"]["send"])
             color: app.color["text"]
+            on_press: app.clickSend()
         Button:
             id: buttonReceipt
             text: str(app.config["options"]["receipt"])
@@ -29,19 +31,38 @@
             orientation: "horizontal"
             Label:
                 id: labelNextNumberSend
-                text: app.config["options"]["send_code"] + str(app.nextNumberSend)
+                text: str(app.nextNumberSend)
                 color: app.color["text"]
                 font_size: 50
                 size_hint: 1, 1.75
             Label:
                 id: labelNextNumberReceipt
-                text: app.config["options"]["receipt_code"] + str(app.nextNumberReceipt)
+                text: str(app.nextNumberReceipt)
                 color: app.color["text"]
                 font_size: 50
                 size_hint: 1, 1.75
             Label:
                 id: labelNextNumberInfo
-                text: app.config["options"]["info_code"] + str(app.nextNumberInfo)
+                text: str(app.nextNumberInfo)
                 color: app.color["text"]
                 font_size: 50
                 size_hint: 1, 1.75
+    BoxLayout:
+        orientation: "vertical"
+        Label:
+            id: "labelCurrentNumberInfo"
+            text: "Your number is"
+            size_hint: 1, 0.5
+        Label:
+            id: "labelCurrentNumber"
+            text: str(app.currentNumber)
+            font_size: 50
+        QRCodeWidget:
+            id: "qrNumber"
+            data: app.currentNumber
+            show_border: False
+            background_color: app.color["qrBackground"]
+        Label:
+            id: "labelInstructions"
+            text: "Scan this QR code or take a photograph of it"
+            size_hint: 1, 0.7

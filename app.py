@@ -19,7 +19,7 @@ from kivy.core.window import Window
 from kivy.config import Config
 
 from kivy.properties import ListProperty
-from kivy.properties import NumericProperty
+from kivy.properties import NumericProperty, ObjectProperty
 
 from kivy.garden.qrcode import QRCodeWidget
 
@@ -50,9 +50,12 @@ class TrickoApp(App):
     countInfo = NumericProperty()
 
     # Next number properties
-    nextNumberSend = NumericProperty()
-    nextNumberReceipt = NumericProperty()
-    nextNumberInfo = NumericProperty()
+    nextNumberSend = ObjectProperty("S0")
+    nextNumberReceipt = ObjectProperty("R0")
+    nextNumberInfo = ObjectProperty("I0")
+
+    # Current number
+    currentNumber = ObjectProperty("NaN")
 
     def clickSend(self):
         """
@@ -62,7 +65,7 @@ class TrickoApp(App):
         # Sum 1 to the sum of all the tickets obtained
         self.count += 1
         # Update the label that shows the sum of all tickets obtained
-        self.counterLabel.text = str(self.count)
+        # self.counterLabel.text = str(self.count)
         # Sum 1 to the sum of the tickets to "Send"
         self.countSend += 1
         # Calculate the next number as from the current number to "Send"
@@ -71,10 +74,10 @@ class TrickoApp(App):
         # Mix the code with the next number
         value = config["options"]["send_code"] + str(self.nextNumberSend)
         # Update the text of the "Send" label, the current number label and the data of the QR code
-        self.nextNumberSendLabel.text, self.currentNumberLabel.text, self.currentNumberQR.data = (
+
+        self.nextNumberSend, self.currentNumber = (
             value,
-            value,
-            value,
+            value
         )
 
     def clickReceipt(self):
@@ -128,33 +131,10 @@ class TrickoApp(App):
 
         self.count = 0
         self.countSend, self.countReceipt, self.countInfo = -1, -1, -1
-        self.nextNumberSend, self.nextNumberReceipt, self.nextNumberInfo = 0, 0, 0
 
         return RootLayout()
 
         """
-        self.nextNumberSend, self.nextNumberReceipt, self.nextNumberInfo = 0, 0, 0
-
-        self.nextNumberSendLabel = Label(
-            text=config["options"]["send_code"] + str(self.nextNumberSend),
-            font_size=50,
-            color=color["text"],
-        )
-        self.nextNumberSendLabel.size_hint = 1, 1.75
-
-        self.nextNumberReceiptLabel = Label(
-            text=config["options"]["receipt_code"] + str(self.nextNumberReceipt),
-            font_size=50,
-            color=color["text"],
-        )
-        self.nextNumberReceiptLabel.size_hint = 1, 1.75
-
-        self.nextNumberInfoLabel = Label(
-            text=config["options"]["info_code"] + str(self.nextNumberInfo),
-            font_size=50,
-            color=color["text"],
-        )
-        self.nextNumberInfoLabel.size_hint = 1, 1.75
 
         # Buttons for each action
         buttonSend.on_press = self.clickSend
@@ -162,27 +142,6 @@ class TrickoApp(App):
         buttonReceipt.on_press = self.clickReceipt
 
         buttonInfo.on_press = self.clickInfo
-
-        # Sublayout (left column) to group items
-        verticalLayout = BoxLayout()
-        verticalLayout.orientation = "vertical"
-
-        # Items of the sublayout (left column)
-        verticalLayout.add_widget(Label(text="Number of tickets distributed"))
-        verticalLayout.add_widget(self.counterLabel)
-        verticalLayout.add_widget(buttonSend)
-        verticalLayout.add_widget(buttonReceipt)
-        verticalLayout.add_widget(buttonInfo)
-        verticalLayout.add_widget(Label(text="Next number"))
-
-        # Sublayout (next numbers) to group the next numbers set
-        horizontalLayout = BoxLayout()
-        horizontalLayout.orientation = "horizontal"
-
-        # Items of the sublayout (next numbers)
-        horizontalLayout.add_widget(self.nextNumberSendLabel)
-        horizontalLayout.add_widget(self.nextNumberReceiptLabel)
-        horizontalLayout.add_widget(self.nextNumberInfoLabel)
 
         # Insert the next numbers layout to the vertical left column layout
         verticalLayout.add_widget(horizontalLayout)
