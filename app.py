@@ -116,73 +116,12 @@ class TrickoApp(App):
         :return: layout
         """
 
-        # Main layout (BoxLayout)
-        """
-        layout = RootLayout()
-        layout.orientation = "horizontal"
-        """
         # Configuration
         self.config = config
         self.color = color
 
         return RootLayout()
 
-        """
-
-        # Buttons for each action
-        buttonSend.on_press = self.clickSend
-
-        buttonReceipt.on_press = self.clickReceipt
-
-        buttonInfo.on_press = self.clickInfo
-
-        # Insert the next numbers layout to the vertical left column layout
-        verticalLayout.add_widget(horizontalLayout)
-
-        # Sublayout (right column) to group items
-        verticalRightLayout = BoxLayout()
-        verticalRightLayout.orientation = "vertical"
-
-        # Current number (the last one obtained) and its label
-        self.currentNumber = "NaN"
-        self.currentNumberLabel = Label(
-            text=self.currentNumber,
-            font_size=50,
-            color=color["text"],
-            size_hint=(1, 0.5),
-        )
-
-        """
-        """
-            QR code generated with the current number as data (eg. E5)
-            
-            TODO: the data should be something more specific than a string with the number, like a link to an app or a
-                website to have digitally the QR and the number to show to the operator.
-        """
-        """
-        self.currentNumberQR = QRCodeWidget(
-            id="qrNumber",
-            data=self.currentNumberLabel.text,
-            show_border=False,
-            background_color=color["qrBackground"],
-        )
-
-        # Items of the sublayout (right column)
-        verticalRightLayout.add_widget(Label(text="Your number is", size_hint=(1, 0.5)))
-        verticalRightLayout.add_widget(self.currentNumberLabel)
-        verticalRightLayout.add_widget(self.currentNumberQR)
-        verticalRightLayout.add_widget(
-            Label(
-                text="Scan this QR code or take a photograph of it", size_hint=(1, 0.7)
-            )
-        )
-
-        # Insert left and right columns in the main layout
-        layout.add_widget(verticalLayout)
-        layout.add_widget(verticalRightLayout)
-
-        return layout
-        """
 
 class RootLayout(BoxLayout):
     pass
