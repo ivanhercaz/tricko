@@ -21,8 +21,6 @@ from kivy.config import Config
 from kivy.properties import ListProperty
 from kivy.properties import NumericProperty, ObjectProperty
 
-from kivy.garden.qrcode import QRCodeWidget
-
 import yaml
 
 # Configuration file (YAML format)
