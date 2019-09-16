@@ -100,6 +100,51 @@ class TrickoApp(App):
             value
         )
 
+    def click_option_d(self):
+        """
+            Action when the "Information" button is clicked
+        """
+        self.count += 1
+
+        self.countOptionD += 1
+        self.nextOptionD = self.countOptionD + 1
+
+        value = self.options["option_d"]["code"] + str(self.nextOptionD)
+        self.nextOptionD, self.currentNumber = (
+            value,
+            value
+        )
+
+    def click_option_e(self):
+        """
+            Action when the "Information" button is clicked
+        """
+        self.count += 1
+
+        self.countOptionE += 1
+        self.nextOptionE = self.countOptionE + 1
+
+        value = self.options["option_e"]["code"] + str(self.nextOptionE)
+        self.nextOptionE, self.currentNumber = (
+            value,
+            value
+        )
+
+    def click_option_f(self):
+        """
+            Action when the "Information" button is clicked
+        """
+        self.count += 1
+
+        self.countOptionF += 1
+        self.nextOptionF = self.countOptionF + 1
+
+        value = self.options["option_f"]["code"] + str(self.nextOptionF)
+        self.nextOptionF, self.currentNumber = (
+            value,
+            value
+        )
+
     def build(self):
         """
             Builder
@@ -142,6 +187,7 @@ class FiveOptionsLayout(BoxLayout):
 
 class SixOptionsLayout(BoxLayout):
     pass
+
 
 if __name__ == "__main__":
     # Set the width and height of the window
