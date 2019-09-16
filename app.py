@@ -41,7 +41,7 @@ class TrickoApp(App):
     # Current number
     currentNumber = ObjectProperty("NaN")
 
-    def clickSend(self):
+    def click_option_a(self):
         """
             Action when the "Send" button is clicked
         """
@@ -64,7 +64,7 @@ class TrickoApp(App):
             value
         )
 
-    def clickReceipt(self):
+    def click_option_b(self):
         """
             Action when the "Receipt" button is clicked.
         """
@@ -79,7 +79,7 @@ class TrickoApp(App):
             value
         )
 
-    def clickInfo(self):
+    def click_option_c(self):
         """
             Action when the "Information" button is clicked
         """

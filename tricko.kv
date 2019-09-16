@@ -11,11 +11,11 @@
         OptionButton:
             id: buttonSend
             text: str(app.config["options"]["option_a"]["name"])
-            on_press: app.clickSend()
+            on_press: app.click_option_a()
         OptionButton:
             id: buttonReceipt
             text: str(app.config["options"]["option_b"]["name"])
-            on_press: app.clickReceipt()
+            on_press: app.click_option_b()
         Label:
             id: labelNextNumber
             text: "Next number"
@@ -40,15 +40,15 @@
         OptionButton:
             id: buttonSend
             text: str(app.config["options"]["option_a"]["name"])
-            on_press: app.clickSend()
+            on_press: app.click_option_a()
         OptionButton:
             id: buttonReceipt
             text: str(app.config["options"]["option_b"]["name"])
-            on_press: app.clickReceipt()
+            on_press: app.click_option_b()
         OptionButton:
             id: buttonInfo
             text: str(app.config["options"]["option_c"]["name"])
-            on_press: app.clickInfo()
+            on_press: app.click_option_c()
         Label:
             id: labelNextNumber
             text: "Next number"
@@ -68,6 +68,7 @@
 <BaseLayout>:
     orientation: "horizontal"
     currentNumberText: app.currentNumber
+
 
 <QRWidget@BoxLayout>:
     orientation: "vertical"
