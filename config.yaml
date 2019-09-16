@@ -2,10 +2,20 @@ app:
   title: Ticketera
   width: 880
   height: 440
+  options: 2
 options:
-  send: Send
-  send_code: S
-  receipt: Receipt
-  receipt_code: R
-  info: Information
-  info_code: I
+  option_a:
+    name: "Test A"
+    code: "A"
+  option_b:
+    name: "Test B"
+    code: "B"
+  option_c:
+    name: "Test C"
+    code: "C"
+  option_d:
+    name: "Test D"
+    code: "D"
+  option_e:
+    name: "Test E"
+    code: "E"
