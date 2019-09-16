@@ -39,25 +39,7 @@
                 color: app.color["text"]
                 font_size: 50
                 size_hint: 1, 1.75
-    BoxLayout:
-        orientation: "vertical"
-        Label:
-            id: "labelCurrentNumberInfo"
-            text: "Your number is"
-            size_hint: 1, 0.5
-        Label:
-            id: "labelCurrentNumber"
-            text: str(app.currentNumber)
-            font_size: 50
-        QRCodeWidget:
-            id: "qrNumber"
-            data: app.currentNumber
-            show_border: False
-            background_color: app.color["qrBackground"]
-        Label:
-            id: "labelInstructions"
-            text: "Scan this QR code or take a photograph of it"
-            size_hint: 1, 0.7
+    QRWidget
 <ThreeOptionsLayout>:
     orientation: "horizontal"
     currentNumberText: app.currentNumber
@@ -109,22 +91,24 @@
                 color: app.color["text"]
                 font_size: 50
                 size_hint: 1, 1.75
-    BoxLayout:
-        orientation: "vertical"
-        Label:
-            id: "labelCurrentNumberInfo"
-            text: "Your number is"
-            size_hint: 1, 0.5
-        Label:
-            id: "labelCurrentNumber"
-            text: str(app.currentNumber)
-            font_size: 50
-        QRCodeWidget:
-            id: "qrNumber"
-            data: app.currentNumber
-            show_border: False
-            background_color: app.color["qrBackground"]
-        Label:
-            id: "labelInstructions"
-            text: "Scan this QR code or take a photograph of it"
-            size_hint: 1, 0.7
+    QRWidget
+
+<QRWidget@BoxLayout>:
+    orientation: "vertical"
+    Label:
+        id: "labelCurrentNumberInfo"
+        text: "Your number is"
+        size_hint: 1, 0.5
+    Label:
+        id: "labelCurrentNumber"
+        text: str(app.currentNumber)
+        font_size: 50
+    QRCodeWidget:
+        id: "qrNumber"
+        data: app.currentNumber
+        show_border: False
+        background_color: app.color["qrBackground"]
+    Label:
+        id: "labelInstructions"
+        text: "Scan this QR code or take a photograph of it"
+        size_hint: 1, 0.7
