@@ -65,6 +65,156 @@
                 text: str(app.nextOptionC)
     QRWidget
 
+<FourOptionsLayout@BaseLayout>:
+    BoxLayout:
+        orientation: "vertical"
+        Label:
+            text: "Number of tickets distributed"
+        BigLabel:
+            id: labelCount
+            text: str(app.count)
+        OptionButton:
+            id: buttonOptionA
+            text: str(app.config["options"]["option_a"]["name"])
+            on_press: app.click_option_a()
+        OptionButton:
+            id: buttonOptionB
+            text: str(app.config["options"]["option_b"]["name"])
+            on_press: app.click_option_b()
+        OptionButton:
+            id: buttonOptionC
+            text: str(app.config["options"]["option_c"]["name"])
+            on_press: app.click_option_c()
+        OptionButton:
+            id: buttonOptionD
+            text: str(app.config["options"]["option_d"]["name"])
+            on_press: app.click_option_d()
+        Label:
+            id: labelNextNumber
+            text: "Next number"
+        BoxLayout:
+            orientation: "horizontal"
+            BigLabel:
+                id: labelNextNumberOptionA
+                text: str(app.nextOptionA)
+            BigLabel:
+                id: labelNextNumberOptionB
+                text: str(app.nextOptionB)
+            BigLabel:
+                id: labelNextNumberOptionC
+                text: str(app.nextOptionC)
+            BigLabel:
+                id: labelNextNumberOptionD
+                text: str(app.nextOptionD)
+    QRWidget
+
+<FiveOptionsLayout@BaseLayout>:
+    BoxLayout:
+        orientation: "vertical"
+        Label:
+            text: "Number of tickets distributed"
+        BigLabel:
+            id: labelCount
+            text: str(app.count)
+        OptionButton:
+            id: buttonOptionA
+            text: str(app.config["options"]["option_a"]["name"])
+            on_press: app.click_option_a()
+        OptionButton:
+            id: buttonOptionB
+            text: str(app.config["options"]["option_b"]["name"])
+            on_press: app.click_option_b()
+        OptionButton:
+            id: buttonOptionC
+            text: str(app.config["options"]["option_c"]["name"])
+            on_press: app.click_option_c()
+        OptionButton:
+            id: buttonOptionD
+            text: str(app.config["options"]["option_d"]["name"])
+            on_press: app.click_option_d()
+        OptionButton:
+            id: buttonOptionE
+            text: str(app.config["options"]["option_e"]["name"])
+            on_press: app.click_option_e()
+        Label:
+            id: labelNextNumber
+            text: "Next number"
+        BoxLayout:
+            orientation: "horizontal"
+            BigLabel:
+                id: labelNextNumberOptionA
+                text: str(app.nextOptionA)
+            BigLabel:
+                id: labelNextNumberOptionB
+                text: str(app.nextOptionB)
+            BigLabel:
+                id: labelNextNumberOptionC
+                text: str(app.nextOptionC)
+            BigLabel:
+                id: labelNextNumberOptionD
+                text: str(app.nextOptionD)
+            BigLabel:
+                id: labelNextNumberOptionE
+                text: str(app.nextOptionE)
+    QRWidget
+
+<SixOptionsLayout@BaseLayout>:
+    BoxLayout:
+        orientation: "vertical"
+        Label:
+            text: "Number of tickets distributed"
+        BigLabel:
+            id: labelCount
+            text: str(app.count)
+        OptionButton:
+            id: buttonOptionA
+            text: str(app.config["options"]["option_a"]["name"])
+            on_press: app.click_option_a()
+        OptionButton:
+            id: buttonOptionB
+            text: str(app.config["options"]["option_b"]["name"])
+            on_press: app.click_option_b()
+        OptionButton:
+            id: buttonOptionC
+            text: str(app.config["options"]["option_c"]["name"])
+            on_press: app.click_option_c()
+        OptionButton:
+            id: buttonOptionD
+            text: str(app.config["options"]["option_d"]["name"])
+            on_press: app.click_option_d()
+        OptionButton:
+            id: buttonOptionE
+            text: str(app.config["options"]["option_e"]["name"])
+            on_press: app.click_option_e()
+        OptionButton:
+            id: buttonOptionF
+            text: str(app.config["options"]["option_f"]["name"])
+            on_press: app.click_option_f()
+        Label:
+            id: labelNextNumber
+            text: "Next number"
+        BoxLayout:
+            orientation: "horizontal"
+            BigLabel:
+                id: labelNextNumberOptionA
+                text: str(app.nextOptionA)
+            BigLabel:
+                id: labelNextNumberOptionB
+                text: str(app.nextOptionB)
+            BigLabel:
+                id: labelNextNumberOptionC
+                text: str(app.nextOptionC)
+            BigLabel:
+                id: labelNextNumberOptionD
+                text: str(app.nextOptionD)
+            BigLabel:
+                id: labelNextNumberOptionE
+                text: str(app.nextOptionE)
+            BigLabel:
+                id: labelNextNumberOptionF
+                text: str(app.nextOptionF)
+    QRWidget
+
 <BaseLayout>:
     orientation: "horizontal"
     currentNumberText: app.currentNumber
