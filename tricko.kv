@@ -9,11 +9,11 @@
             id: labelCount
             text: str(app.count)
         OptionButton:
-            id: buttonSend
+            id: buttonOptionA
             text: str(app.config["options"]["option_a"]["name"])
             on_press: app.click_option_a()
         OptionButton:
-            id: buttonReceipt
+            id: buttonOptionB
             text: str(app.config["options"]["option_b"]["name"])
             on_press: app.click_option_b()
         Label:
@@ -22,10 +22,10 @@
         BoxLayout:
             orientation: "horizontal"
             BigLabel:
-                id: labelNextNumberSend
+                id: labelNextNumberOptionA
                 text: str(app.nextOptionA)
             BigLabel:
-                id: labelNextNumberInfo
+                id: labelNextNumberOptionB
                 text: str(app.nextOptionB)
     QRWidget
 
@@ -38,15 +38,15 @@
             id: labelCount
             text: str(app.count)
         OptionButton:
-            id: buttonSend
+            id: buttonOptionA
             text: str(app.config["options"]["option_a"]["name"])
             on_press: app.click_option_a()
         OptionButton:
-            id: buttonReceipt
+            id: buttonOptionB
             text: str(app.config["options"]["option_b"]["name"])
             on_press: app.click_option_b()
         OptionButton:
-            id: buttonInfo
+            id: buttonOptionC
             text: str(app.config["options"]["option_c"]["name"])
             on_press: app.click_option_c()
         Label:
@@ -55,13 +55,13 @@
         BoxLayout:
             orientation: "horizontal"
             BigLabel:
-                id: labelNextNumberSend
+                id: labelNextNumberOptionA
                 text: str(app.nextOptionA)
             BigLabel:
-                id: labelNextNumberReceipt
+                id: labelNextNumberOptionB
                 text: str(app.nextOptionB)
             BigLabel:
-                id: labelNextNumberInfo
+                id: labelNextNumberOptionC
                 text: str(app.nextOptionC)
     QRWidget
 
