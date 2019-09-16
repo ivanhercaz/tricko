@@ -6,39 +6,28 @@
         orientation: "vertical"
         Label:
             text: "Number of tickets distributed"
-        Label:
+        BigLabel:
             id: labelCount
             text: str(app.count)
-            color: app.color["text"]
-            font_size: 50
-            size_hint: 1, 1.75
-        Button:
+        OptionButton:
             id: buttonSend
             text: str(app.config["options"]["option_a"]["name"])
-            color: app.color["text"]
             on_press: app.clickSend()
-        Button:
+        OptionButton:
             id: buttonReceipt
             text: str(app.config["options"]["option_b"]["name"])
-            color: app.color["text"]
             on_press: app.clickReceipt()
         Label:
             id: labelNextNumber
             text: "Next number"
         BoxLayout:
             orientation: "horizontal"
-            Label:
+            BigLabel:
                 id: labelNextNumberSend
                 text: str(app.nextNumberSend)
-                color: app.color["text"]
-                font_size: 50
-                size_hint: 1, 1.75
-            Label:
+            BigLabel:
                 id: labelNextNumberInfo
                 text: str(app.nextNumberInfo)
-                color: app.color["text"]
-                font_size: 50
-                size_hint: 1, 1.75
     QRWidget
 <ThreeOptionsLayout>:
     orientation: "horizontal"
@@ -47,51 +36,45 @@
         orientation: "vertical"
         Label:
             text: "Number of tickets distributed"
-        Label:
+        BigLabel:
             id: labelCount
             text: str(app.count)
-            color: app.color["text"]
-            font_size: 50
-            size_hint: 1, 1.75
-        Button:
+        OptionButton:
             id: buttonSend
             text: str(app.config["options"]["option_a"]["name"])
-            color: app.color["text"]
             on_press: app.clickSend()
-        Button:
+        OptionButton:
             id: buttonReceipt
             text: str(app.config["options"]["option_b"]["name"])
-            color: app.color["text"]
             on_press: app.clickReceipt()
-        Button:
+        OptionButton:
             id: buttonInfo
             text: str(app.config["options"]["option_c"]["name"])
-            color: app.color["text"]
             on_press: app.clickInfo()
         Label:
             id: labelNextNumber
             text: "Next number"
         BoxLayout:
             orientation: "horizontal"
-            Label:
+            BigLabel:
                 id: labelNextNumberSend
                 text: str(app.nextNumberSend)
-                color: app.color["text"]
-                font_size: 50
-                size_hint: 1, 1.75
-            Label:
+            BigLabel:
                 id: labelNextNumberReceipt
                 text: str(app.nextNumberReceipt)
-                color: app.color["text"]
-                font_size: 50
-                size_hint: 1, 1.75
-            Label:
+            BigLabel:
                 id: labelNextNumberInfo
                 text: str(app.nextNumberInfo)
-                color: app.color["text"]
-                font_size: 50
-                size_hint: 1, 1.75
     QRWidget
+
+<OptionButton@Button>:
+    color: app.color["text"]
+    font_size: 20
+
+<BigLabel@Label>:
+    color: app.color["text"]
+    font_size: 50
+    size_hint: 1, 1.75
 
 <QRWidget@BoxLayout>:
     orientation: "vertical"
