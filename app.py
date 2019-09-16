@@ -29,14 +29,20 @@ Config.write()
 class TrickoApp(App):
     # Counter properties
     count = NumericProperty(0)
-    countSend = NumericProperty(-1)
-    countReceipt = NumericProperty(-1)
-    countInfo = NumericProperty(-1)
+    countOptionA = NumericProperty(-1)
+    countOptionB = NumericProperty(-1)
+    countOptionC = NumericProperty(-1)
+    countOptionD = NumericProperty(-1)
+    countOptionE = NumericProperty(-1)
+    countOptionF = NumericProperty(-1)
 
     # Next number properties
-    nextNumberSend = ObjectProperty("S0")
-    nextNumberReceipt = ObjectProperty("R0")
-    nextNumberInfo = ObjectProperty("I0")
+    nextOptionA = ObjectProperty(str(config["options"]["option_a"]["code"]) + "0")
+    nextOptionB = ObjectProperty(str(config["options"]["option_b"]["code"]) + "0")
+    nextOptionC = ObjectProperty(str(config["options"]["option_c"]["code"]) + "0")
+    nextOptionD = ObjectProperty(str(config["options"]["option_d"]["code"]) + "0")
+    nextOptionE = ObjectProperty(str(config["options"]["option_e"]["code"]) + "0")
+    nextOptionF = ObjectProperty(str(config["options"]["option_f"]["code"]) + "0")
 
     # Current number
     currentNumber = ObjectProperty("NaN")
@@ -51,15 +57,15 @@ class TrickoApp(App):
         # Update the label that shows the sum of all tickets obtained
         # self.counterLabel.text = str(self.count)
         # Sum 1 to the sum of the tickets to "Send"
-        self.countSend += 1
+        self.countOptionA += 1
         # Calculate the next number as from the current number to "Send"
-        self.nextNumberSend = self.countSend + 1
+        self.nextOptionA = self.countOptionA + 1
 
         # Mix the code with the next number
-        value = config["options"]["send_code"] + str(self.nextNumberSend)
+        value = self.options["option_a"]["code"] + str(self.nextOptionA)
         # Update the text of the "Send" label, the current number label and the data of the QR code
 
-        self.nextNumberSend, self.currentNumber = (
+        self.nextOptionA, self.currentNumber = (
             value,
             value
         )
@@ -70,11 +76,11 @@ class TrickoApp(App):
         """
         self.count += 1
 
-        self.countReceipt += 1
-        self.nextNumberReceipt = self.countReceipt + 1
+        self.countOptionB += 1
+        self.nextOptionB = self.countOptionB + 1
 
-        value = config["options"]["receipt_code"] + str(self.nextNumberReceipt)
-        self.nextNumberReceipt, self.currentNumber = (
+        value = self.options["option_b"]["code"] + str(self.nextOptionB)
+        self.nextOptionB, self.currentNumber = (
             value,
             value
         )
@@ -85,11 +91,11 @@ class TrickoApp(App):
         """
         self.count += 1
 
-        self.countInfo += 1
-        self.nextNumberInfo = self.countInfo + 1
+        self.countOptionC += 1
+        self.nextOptionC = self.countOptionC + 1
 
-        value = config["options"]["receipt_code"] + str(self.nextNumberInfo)
-        self.nextNumberInfo, self.currentNumber = (
+        value = self.options["option_c"]["code"] + str(self.nextOptionC)
+        self.nextOptionC, self.currentNumber = (
             value,
             value
         )
