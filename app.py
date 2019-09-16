@@ -21,14 +21,6 @@ import yaml
 with open("config.yaml", "r") as configFile:
     config = yaml.load(configFile, Loader=yaml.SafeLoader)
 
-# TODO: add instructions to how to use new colors
-# TODO: make easier the system to choice the colors
-color = {
-    "base": [120 / 250, 144 / 250, 156 / 250, 1],  # black
-    "text": [1, 1, 1, 1],  # white
-    "qrBackground": (1, 1, 1, 0.01),
-}
-
 # Kivy configuration
 Config.set("graphics", "resizable", False)
 Config.write()
@@ -110,18 +102,19 @@ class TrickoApp(App):
 
         # Configuration
         self.config = config
-        self.options = self.config["app"]["options"]
-        self.color = color
+        self.color = self.config["app"]["color"]
+        self.numberOfOptions = self.config["app"]["options"]
+        self.options = self.config["options"]
 
-        if self.options is 2:
+        if self.numberOfOptions is 2:
             return TwoOptionsLayout()
-        elif self.options is 3:
+        elif self.numberOfOptions is 3:
             return ThreeOptionsLayout()
-        elif self.options is 4:
+        elif self.numberOfOptions is 4:
             return FourOptionsLayout()
-        elif self.options is 5:
+        elif self.numberOfOptions is 5:
             return FiveOptionsLayout()
-        elif self.options is 6:
+        elif self.numberOfOptions is 6:
             return SixOptionsLayout()
 
 
@@ -146,10 +139,9 @@ class SixOptionsLayout(BoxLayout):
 
 if __name__ == "__main__":
     # Set the width and height of the window
-    Window.size = int(config["app"]["width"]), int(config["app"]["height"])
+    Window.size = config["app"]["width"], config["app"]["height"]
 
-    # Set the background color of the window with the base color chosen
-    Window.clearcolor = color["base"]
+    Window.clearcolor = config["app"]["color"]["base"]
 
     app = TrickoApp()
     app.title = config["app"]["title"]
