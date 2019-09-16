@@ -19,7 +19,7 @@ import yaml
 
 # Configuration file (YAML format)
 with open("config.yaml", "r") as configFile:
-    config = yaml.load(configFile, Loader=yaml.BaseLoader)
+    config = yaml.load(configFile, Loader=yaml.SafeLoader)
 
 # TODO: add instructions to how to use new colors
 # TODO: make easier the system to choice the colors
@@ -110,14 +110,39 @@ class TrickoApp(App):
 
         # Configuration
         self.config = config
+        self.options = self.config["app"]["options"]
         self.color = color
 
-        return RootLayout()
+        if self.options is 2:
+            return TwoOptionsLayout()
+        elif self.options is 3:
+            return ThreeOptionsLayout()
+        elif self.options is 4:
+            return FourOptionsLayout()
+        elif self.options is 5:
+            return FiveOptionsLayout()
+        elif self.options is 6:
+            return SixOptionsLayout()
 
 
-class RootLayout(BoxLayout):
+class TwoOptionsLayout(BoxLayout):
     pass
 
+
+class ThreeOptionsLayout(BoxLayout):
+    pass
+
+
+class FourOptionsLayout(BoxLayout):
+    pass
+
+
+class FiveOptionsLayout(BoxLayout):
+    pass
+
+
+class SixOptionsLayout(BoxLayout):
+    pass
 
 if __name__ == "__main__":
     # Set the width and height of the window
