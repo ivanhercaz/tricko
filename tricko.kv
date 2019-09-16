@@ -1,7 +1,6 @@
 #:import QRCodeWidget kivy.garden.qrcode
-<TwoOptionsLayout>:
-    orientation: "horizontal"
-    currentNumberText: app.currentNumber
+
+<TwoOptionsLayout@BaseLayout>:
     BoxLayout:
         orientation: "vertical"
         Label:
@@ -29,9 +28,8 @@
                 id: labelNextNumberInfo
                 text: str(app.nextNumberInfo)
     QRWidget
-<ThreeOptionsLayout>:
-    orientation: "horizontal"
-    currentNumberText: app.currentNumber
+
+<ThreeOptionsLayout@BaseLayout>:
     BoxLayout:
         orientation: "vertical"
         Label:
@@ -66,6 +64,10 @@
                 id: labelNextNumberInfo
                 text: str(app.nextNumberInfo)
     QRWidget
+
+<BaseLayout>:
+    orientation: "horizontal"
+    currentNumberText: app.currentNumber
 
 <OptionButton@Button>:
     color: app.color["text"]
