@@ -69,22 +69,13 @@
     orientation: "horizontal"
     currentNumberText: app.currentNumber
 
-<OptionButton@Button>:
-    color: app.color["text"]
-    font_size: 20
-
-<BigLabel@Label>:
-    color: app.color["text"]
-    font_size: 50
-    size_hint: 1, 1.75
-
 <QRWidget@BoxLayout>:
     orientation: "vertical"
     Label:
         id: "labelCurrentNumberInfo"
         text: "Your number is"
         size_hint: 1, 0.5
-    Label:
+    BigLabel:
         id: "labelCurrentNumber"
         text: str(app.currentNumber)
         font_size: 50
@@ -97,3 +88,12 @@
         id: "labelInstructions"
         text: "Scan this QR code or take a photograph of it"
         size_hint: 1, 0.7
+
+<OptionButton@Button>:
+    color: app.color["text"]
+    font_size: 20
+
+<BigLabel@Label>:
+    color: app.color["text"]
+    font_size: 50
+    size_hint: 1, 1.75
