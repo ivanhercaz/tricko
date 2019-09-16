@@ -5,17 +5,20 @@ app:
   options: 2
 options:
   option_a:
-    name: "Test A"
-    code: "A"
+    name: "Send"
+    code: "S"
   option_b:
-    name: "Test B"
-    code: "B"
+    name: "Receipt"
+    code: "R"
   option_c:
-    name: "Test C"
-    code: "C"
+    name: "Info"
+    code: "I"
   option_d:
-    name: "Test D"
-    code: "D"
+    name:
+    code:
   option_e:
-    name: "Test E"
-    code: "E"
+    name:
+    code:
+  option_f:
+    name:
+    code:
