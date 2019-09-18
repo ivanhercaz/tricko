@@ -1,8 +1,8 @@
 app:
   title: Ticketera
   width: 880
-  height: 440
-  options: 3
+  height: 640
+  options: 10
   color:
     base: [0.48, 0.576, 0.624, 1]
     text: [1, 1, 1, 1]
@@ -18,11 +18,23 @@ options:
     name: "Info"
     code: "I"
   option_d:
-    name:
-    code:
+    name: "Test D"
+    code: "D"
   option_e:
-    name:
-    code:
+    name: "Test E"
+    code: "E"
   option_f:
-    name:
-    code:
+    name: "Test F"
+    code: "F"
+  option_g:
+    name: "Test G"
+    code: "G"
+  option_h:
+    name: "Test H"
+    code: "H"
+  option_i:
+    name: "Test I"
+    code: "I"
+  option_j:
+    name: "Test J"
+    code: "J"
