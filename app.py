@@ -35,6 +35,10 @@ class TrickoApp(App):
     countOptionD = NumericProperty(-1)
     countOptionE = NumericProperty(-1)
     countOptionF = NumericProperty(-1)
+    countOptionG = NumericProperty(-1)
+    countOptionH = NumericProperty(-1)
+    countOptionI = NumericProperty(-1)
+    countOptionJ = NumericProperty(-1)
 
     # Next number properties
     nextOptionA = ObjectProperty(str(config["options"]["option_a"]["code"]) + "0")
@@ -43,6 +47,10 @@ class TrickoApp(App):
     nextOptionD = ObjectProperty(str(config["options"]["option_d"]["code"]) + "0")
     nextOptionE = ObjectProperty(str(config["options"]["option_e"]["code"]) + "0")
     nextOptionF = ObjectProperty(str(config["options"]["option_f"]["code"]) + "0")
+    nextOptionG = ObjectProperty(str(config["options"]["option_g"]["code"]) + "0")
+    nextOptionH = ObjectProperty(str(config["options"]["option_h"]["code"]) + "0")
+    nextOptionI = ObjectProperty(str(config["options"]["option_i"]["code"]) + "0")
+    nextOptionJ = ObjectProperty(str(config["options"]["option_j"]["code"]) + "0")
 
     # Current number
     currentNumber = ObjectProperty("NaN")
@@ -145,6 +153,66 @@ class TrickoApp(App):
             value
         )
 
+    def click_option_g(self):
+        """
+            Action when the "Information" button is clicked
+        """
+        self.count += 1
+
+        self.countOptionG += 1
+        self.nextOptionG = self.countOptionG + 1
+
+        value = self.options["option_g"]["code"] + str(self.nextOptionG)
+        self.nextOptionG, self.currentNumber = (
+            value,
+            value
+        )
+
+    def click_option_h(self):
+        """
+            Action when the "Information" button is clicked
+        """
+        self.count += 1
+
+        self.countOptionH += 1
+        self.nextOptionH = self.countOptionH + 1
+
+        value = self.options["option_h"]["code"] + str(self.nextOptionH)
+        self.nextOptionH, self.currentNumber = (
+            value,
+            value
+        )
+
+    def click_option_i(self):
+        """
+            Action when the "Information" button is clicked
+        """
+        self.count += 1
+
+        self.countOptionI += 1
+        self.nextOptionI = self.countOptionI + 1
+
+        value = self.options["option_i"]["code"] + str(self.nextOptionI)
+        self.nextOptionI, self.currentNumber = (
+            value,
+            value
+        )
+
+    def click_option_j(self):
+        """
+            Action when the "Information" button is clicked
+        """
+        self.count += 1
+
+        self.countOptionJ += 1
+        self.nextOptionJ = self.countOptionJ + 1
+
+        value = self.options["option_j"]["code"] + str(self.nextOptionJ)
+        self.nextOptionJ, self.currentNumber = (
+            value,
+            value
+        )
+
     def build(self):
         """
             Builder
@@ -167,6 +235,16 @@ class TrickoApp(App):
             return FiveOptionsLayout()
         elif self.numberOfOptions is 6:
             return SixOptionsLayout()
+        elif self.numberOfOptions is 7:
+            return SevenOptionsLayout()
+        elif self.numberOfOptions is 8:
+            return EightOptionsLayout()
+        elif self.numberOfOptions is 9:
+            return NineOptionsLayout()
+        elif self.numberOfOptions is 10:
+            return TenOptionsLayout()
+
+# Layouts according to the buttons configured in config.yaml
 
 
 class TwoOptionsLayout(BoxLayout):
@@ -186,6 +264,22 @@ class FiveOptionsLayout(BoxLayout):
 
 
 class SixOptionsLayout(BoxLayout):
+    pass
+
+
+class SevenOptionsLayout(BoxLayout):
+    pass
+
+
+class EightOptionsLayout(BoxLayout):
+    pass
+
+
+class NineOptionsLayout(BoxLayout):
+    pass
+
+
+class TenOptionsLayout(BoxLayout):
     pass
 
 
