@@ -1,4 +1,4 @@
-pyyaml==5.1.2
+pyyaml==5.4
 kivy==1.11.1
 kivy-garden==0.1.4
 qrcode[pil]==6.1
